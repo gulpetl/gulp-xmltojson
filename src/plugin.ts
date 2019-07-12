@@ -2,6 +2,7 @@ var map = require('map-stream');
 var rext = require('replace-ext');
 import Vinyl = require('vinyl')
 import PluginError = require('plugin-error');
+const pkginfo = require('pkginfo')(module);
 const PLUGIN_NAME = module.exports.name;
 var convert = require('xml-js');
 
