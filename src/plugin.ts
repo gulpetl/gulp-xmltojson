@@ -5,7 +5,8 @@ import PluginError = require('plugin-error');
 const PLUGIN_NAME = module.exports.name;
 var convert = require('xml-js');
 
-export function jsontoxml(configObj?: any) {
+
+export function xmltojson(configObj?: any) {
   var configObj = configObj ? configObj : {};
 
   function modifyContents(file: Vinyl, cb:Function) {
@@ -16,18 +17,18 @@ export function jsontoxml(configObj?: any) {
     //Will parse the JSON into XML if the file is in
     if (file.isBuffer()){
       let fileBuf : Buffer = (file.contents as Buffer)
-      let xmlResult:any
-      let JSONData:any
-        try {
-          JSONData = fileBuf.toString('utf8')
-          xmlResult = convert.json2xml(JSONData, configObj);
+      let xmlData:any
+      let JSONResult:any
+       try {
+          xmlData = fileBuf.toString('utf8')
+          JSONResult = convert.xml2json(xmlData,configObj)
           
           
     }catch(err){
       returnErr = new PluginError(PLUGIN_NAME, err);
     }
-    file.contents = new Buffer(xmlResult);
-    file.path = rext(file.path, '.xml');
+    file.contents = new Buffer(JSONResult);
+    file.path = rext(file.path, '.json');
 
   }
     cb(returnErr, file);
