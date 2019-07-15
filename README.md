@@ -1,38 +1,10 @@
 # gulp-xmltojson #
 
-*This plugin is being created from [gulp-jsontoxml](https://www.npmjs.com/package/gulp-jsontoxml). The original **gulp-jsontoxml** readme is shown below*
-
 This plugin is a wrapper for npm package ['xml-js'](https://www.npmjs.com/package/xml-js)
 
-The goal of this plugin is to take a JSON file and convert it to XML. The JSON files are passed through gulp.src in the gulpfile.
+The goal of this plugin is to take a XML file and convert it to JSON. The XML files are passed through gulp.src in the gulpfile.
 
-A sample JSON may look something like
-```
-{  
-   "root":{  
-      "section":[  
-         {  
-            "title":[  
-               "First"
-            ],
-            "content":[  
-               "Data: buffer"
-            ]
-         },
-         {  
-            "title":[  
-               "Second"
-            ],
-            "content":[  
-               "Data: string"
-            ]
-         }
-      ]
-   }
-}
-```
-
-and if passed in to this plugin will return the following xml
+A sample XML may look something like
 ```
 <root>
     <section>
@@ -45,9 +17,36 @@ and if passed in to this plugin will return the following xml
     </section>
 </root>
 ```
-The package `gulp-xmltojson` that converts xml files back to JSON is coming soon.
+
+and if passed in to this plugin will return the following JSON
+```
+{
+    "root": {
+        "section": [
+            {
+                "title": {
+                    "_text": "First"
+                },
+                "content": {
+                    "_text": "Data: buffer"
+                }
+            },
+            {
+                "title": {
+                    "_text": "Second"
+                },
+                "content": {
+                    "_text": "Data: string"
+                }
+            }
+        ]
+    }
+}
+```
+
+The package [gulp-jsontoxml](https://github.com/gulpetl/gulp-jsontoxml) can be used to convert JSON files back to XML 
 # Compact vs Non Compact #
-This plugin takes in both [compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) and [non-compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) JSON files and the user can specify whether or not the file is in compact format by setting 'compact:true' or 'compact:false' in the options parameter. 
+The user can decide whether to create a [compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) or a [non-compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) JSON file by setting 'compact:true' or 'compact:false' in the options parameter. 
 
 A sample compact and non compact JSON comparison can be found [here](https://github.com/nashwaan/xml-js#compact-vs-non-compact)
 
@@ -57,19 +56,19 @@ A sample compact and non compact JSON comparison can be found [here](https://git
 **gulp-jsontoxml** plugin accepts a configObj as its parameter. The configObj will contain any info the plugin needs.
 
 
-The configObj in this situation is used for users to enter in options that the user can enter inorder to customize the resultant xml file. The table containing the options can be found [here](https://github.com/nashwaan/xml-js#options-for-converting-js-object--json--xml)
+The configObj in this situation is used for users to enter in options that the user can enter inorder to customize the resultant xml file. The table containing the options can be found [here](https://github.com/nashwaan/xml-js#convert-xml--js-object--json)
 
 
 ##### Sample gulpfile.js
 ```
 let gulp = require('gulp')
 import {jsontoxml} from 'gulp-jsontoxml'
-var sampleConfigObj = {compact: true, ignoreDeclaration: true, spaces: 4}; // sample configObj
+var sampleConfigObj = {compact: true, ignoreAttributes:true}; // sample configObj
 
 exports.default = function() {
-    return src('data/*.json')
+    return src('data/*.xml')
     // pipe the files through our jsontoxml plugin
-    .pipe(jsontoxml(sampleConfigObj))
+    .pipe(xmltojson(sampleConfigObj))
     .pipe(gulp.dest('../testdata/processed'));
     };
 ```

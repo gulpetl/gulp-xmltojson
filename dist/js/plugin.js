@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var map = require('map-stream');
 var rext = require('replace-ext');
 const PluginError = require("plugin-error");
+const pkginfo = require('pkginfo')(module);
 const PLUGIN_NAME = module.exports.name;
 var convert = require('xml-js');
-function xml2json(configObj) {
+function xmltojson(configObj) {
     var configObj = configObj ? configObj : {};
     function modifyContents(file, cb) {
         if (file.isNull())
@@ -16,22 +17,22 @@ function xml2json(configObj) {
         //Will parse the JSON into XML if the file is in
         if (file.isBuffer()) {
             let fileBuf = file.contents;
-            let xmlResult;
-            let JSONData;
+            let xmlData;
+            let JSONResult;
             try {
-                JSONData = fileBuf.toString('utf8');
-                xmlResult = convert.xml2json(JSONData, configObj);
+                xmlData = fileBuf.toString('utf8');
+                JSONResult = convert.xml2json(xmlData, configObj);
             }
             catch (err) {
                 returnErr = new PluginError(PLUGIN_NAME, err);
             }
-            file.contents = new Buffer(xmlResult);
+            file.contents = new Buffer(JSONResult);
             file.path = rext(file.path, '.json');
         }
         cb(returnErr, file);
     }
     return map(modifyContents);
 }
-exports.xml2json = xml2json;
+exports.xmltojson = xmltojson;
 ;
 //# sourceMappingURL=plugin.js.map

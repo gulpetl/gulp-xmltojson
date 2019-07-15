@@ -1,7 +1,7 @@
 {
   "name": "gulp-xmltojson",
   "version": "1.0.0",
-  "repository": "https://github.com/gulpetl/gulp-jsontoxml",
+  "repository": "https://github.com/gulpetl/gulp-xmltojson",
   "description": "Convert json files to xml with gulp",
   "main": "dist/js/plugin.js",
   "typings": "dist/types/plugin.d.ts",

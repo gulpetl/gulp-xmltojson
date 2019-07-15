@@ -10,7 +10,7 @@ const PLUGIN_NAME = module.exports.name;
 
 //the plugin will be called here
     export function xml () {
-      gulp.src('../testdata/planes.xml')
+      gulp.src('../testdata/*.xml')
         .pipe(xmltojson(options))
         .pipe(gulp.dest('../testdata/processed'));
     };
