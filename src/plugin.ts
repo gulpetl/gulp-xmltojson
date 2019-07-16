@@ -4,11 +4,9 @@ import Vinyl = require('vinyl')
 import PluginError = require('plugin-error');
 const pkginfo = require('pkginfo')(module);
 const PLUGIN_NAME = module.exports.name;
-var convert = require('xml-js');
+import convert = require('xml-js'); 
 
-
-export function xmltojson(configObj?: any) {
-  var configObj = configObj ? configObj : {};
+export function xmltojson(configObj?:convert.Options.XML2JSON) {
 
   function modifyContents(file: Vinyl, cb:Function) {
     if (file.isNull()) return cb(null, file); 

@@ -48,12 +48,12 @@ The package [gulp-jsontoxml](https://github.com/gulpetl/gulp-jsontoxml) can be u
 # Compact vs Non Compact #
 The user can decide whether to create a [compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) or a [non-compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) JSON file by setting 'compact:true' or 'compact:false' in the options parameter. 
 
-A sample compact and non compact JSON comparison can be found [here](https://github.com/nashwaan/xml-js#compact-vs-non-compact)
+A sample compact and non compact JSON comparison can be found [here](https://github.com/nashwaan/xml-js#synopsis)
 
 
 
 ### Usage
-**gulp-jsontoxml** plugin accepts a configObj as its parameter. The configObj will contain any info the plugin needs.
+**gulp-xmltojson** plugin accepts a configObj as its parameter. The configObj will contain any info the plugin needs.
 
 
 The configObj in this situation is used for users to enter in options that the user can enter inorder to customize the resultant xml file. The table containing the options can be found [here](https://github.com/nashwaan/xml-js#convert-xml--js-object--json)
@@ -62,11 +62,11 @@ The configObj in this situation is used for users to enter in options that the u
 ##### Sample gulpfile.js
 ```
 let gulp = require('gulp')
-import {jsontoxml} from 'gulp-jsontoxml'
+import {xmltojson} from 'gulp-xmltojson'
 var sampleConfigObj = {compact: true, ignoreAttributes:true}; // sample configObj
 
 exports.default = function() {
-    return src('data/*.xml')
+    return src('data/*.json')
     // pipe the files through our jsontoxml plugin
     .pipe(xmltojson(sampleConfigObj))
     .pipe(gulp.dest('../testdata/processed'));
