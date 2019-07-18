@@ -30,6 +30,8 @@
   ],
   "homepage": "https://gulpetl.com",
   "dependencies": {
+    "callback": "0.0.1",
+    "gulp-jsontoxml": "git+https://github.com/gulpetl/gulp-jsontoxml.git",
     "loglevel": "^1.6.3",
     "map-stream": "0.0.7",
     "pkginfo": "^0.4.1",

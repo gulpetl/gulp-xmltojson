@@ -7,7 +7,11 @@ const PLUGIN_NAME = module.exports.name;
 import convert = require('xml-js'); 
 
 export function xmltojson(configObj?:convert.Options.XML2JSON) {
-
+  configObj = configObj ? configObj : {};
+  if(configObj==undefined)
+  {
+    configObj={}
+  }
   function modifyContents(file: Vinyl, cb:Function) {
     if (file.isNull()) return cb(null, file); 
     if (file.isStream()) return cb(new PluginError(PLUGIN_NAME, "Streaming not supported")); // pass error if streaming is not supported

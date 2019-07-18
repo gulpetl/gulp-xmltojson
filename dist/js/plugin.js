@@ -5,9 +5,12 @@ var rext = require('replace-ext');
 const PluginError = require("plugin-error");
 const pkginfo = require('pkginfo')(module);
 const PLUGIN_NAME = module.exports.name;
-var convert = require('xml-js');
+const convert = require("xml-js");
 function xmltojson(configObj) {
-    var configObj = configObj ? configObj : {};
+    configObj = configObj ? configObj : {};
+    if (configObj == undefined) {
+        configObj = {};
+    }
     function modifyContents(file, cb) {
         if (file.isNull())
             return cb(null, file);

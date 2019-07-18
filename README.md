@@ -66,12 +66,13 @@ import {xmltojson} from 'gulp-xmltojson'
 var sampleConfigObj = {compact: true, ignoreAttributes:true}; // sample configObj
 
 exports.default = function() {
-    return src('data/*.json')
+    return src('data/*.xml')
     // pipe the files through our jsontoxml plugin
     .pipe(xmltojson(sampleConfigObj))
     .pipe(gulp.dest('../testdata/processed'));
     };
 ```
+
 ### Quick Start
 * Dependencies: 
     * [git](https://git-scm.com/downloads)
