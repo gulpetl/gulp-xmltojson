@@ -1,8 +1,6 @@
+<?xml version="1.0"?>
 <catalog>
-    <book>
-        <$>
-            <id>bk101</id>
-        </$>
+    <book id="bk101">
         <author>Gambardella, Matthew</author>
         <title>XML Developer's Guide</title>
         <genre>Computer</genre>
@@ -11,10 +9,7 @@
         <description>An in-depth look at creating applications 
       with XML.</description>
     </book>
-    <book>
-        <$>
-            <id>bk102</id>
-        </$>
+    <book id="bk102">
         <author>Ralls, Kim</author>
         <title>Midnight Rain</title>
         <genre>Fantasy</genre>
@@ -24,10 +19,7 @@
       an evil sorceress, and her own childhood to become queen 
       of the world.</description>
     </book>
-    <book>
-        <$>
-            <id>bk103</id>
-        </$>
+    <book id="bk103">
         <author>Corets, Eva</author>
         <title>Maeve Ascendant</title>
         <genre>Fantasy</genre>
@@ -37,10 +29,7 @@
       society in England, the young survivors lay the 
       foundation for a new society.</description>
     </book>
-    <book>
-        <$>
-            <id>bk104</id>
-        </$>
+    <book id="bk104">
         <author>Corets, Eva</author>
         <title>Oberon's Legacy</title>
         <genre>Fantasy</genre>
@@ -51,10 +40,7 @@
       for the inhabitants of London. Sequel to Maeve 
       Ascendant.</description>
     </book>
-    <book>
-        <$>
-            <id>bk105</id>
-        </$>
+    <book id="bk105">
         <author>Corets, Eva</author>
         <title>The Sundered Grail</title>
         <genre>Fantasy</genre>
@@ -64,10 +50,7 @@
       battle one another for control of England. Sequel to 
       Oberon's Legacy.</description>
     </book>
-    <book>
-        <$>
-            <id>bk106</id>
-        </$>
+    <book id="bk106">
         <author>Randall, Cynthia</author>
         <title>Lover Birds</title>
         <genre>Romance</genre>
@@ -76,10 +59,7 @@
         <description>When Carla meets Paul at an ornithology 
       conference, tempers fly as feathers get ruffled.</description>
     </book>
-    <book>
-        <$>
-            <id>bk107</id>
-        </$>
+    <book id="bk107">
         <author>Thurman, Paula</author>
         <title>Splish Splash</title>
         <genre>Romance</genre>
@@ -88,10 +68,7 @@
         <description>A deep sea diver finds true love twenty 
       thousand leagues beneath the sea.</description>
     </book>
-    <book>
-        <$>
-            <id>bk108</id>
-        </$>
+    <book id="bk108">
         <author>Knorr, Stefan</author>
         <title>Creepy Crawlies</title>
         <genre>Horror</genre>
@@ -100,10 +77,7 @@
         <description>An anthology of horror stories about roaches,
       centipedes, scorpions  and other insects.</description>
     </book>
-    <book>
-        <$>
-            <id>bk109</id>
-        </$>
+    <book id="bk109">
         <author>Kress, Peter</author>
         <title>Paradox Lost</title>
         <genre>Science Fiction</genre>
@@ -113,10 +87,7 @@
       Uncertainty Device, James Salway discovers the problems 
       of being quantum.</description>
     </book>
-    <book>
-        <$>
-            <id>bk110</id>
-        </$>
+    <book id="bk110">
         <author>O'Brien, Tim</author>
         <title>Microsoft .NET: The Programming Bible</title>
         <genre>Computer</genre>
@@ -125,10 +96,7 @@
         <description>Microsoft's .NET initiative is explored in 
       detail in this deep programmer's reference.</description>
     </book>
-    <book>
-        <$>
-            <id>bk111</id>
-        </$>
+    <book id="bk111">
         <author>O'Brien, Tim</author>
         <title>MSXML3: A Comprehensive Guide</title>
         <genre>Computer</genre>
@@ -138,10 +106,7 @@
       detail, with attention to XML DOM interfaces, XSLT processing, 
       SAX and more.</description>
     </book>
-    <book>
-        <$>
-            <id>bk112</id>
-        </$>
+    <book id="bk112">
         <author>Galos, Mike</author>
         <title>Visual Studio 7: A Comprehensive Guide</title>
         <genre>Computer</genre>
