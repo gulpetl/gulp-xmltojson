@@ -44,7 +44,7 @@ and if passed in to this plugin will return the following JSON
 }
 ```
 
-The package [gulp-jsontoxml](https://github.com/gulpetl/gulp-jsontoxml) can be used to convert JSON files back to XML 
+The package [gulp-jsontoxml](https://www.npmjs.com/package/gulp-jsontoxml) can be used to convert JSON files back to XML 
 # Compact vs Non Compact #
 The user can decide whether to create a [compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) or a [non-compact](https://github.com/nashwaan/xml-js#compact-vs-non-compact) JSON file by setting 'compact:true' or 'compact:false' in the options parameter. 
 
