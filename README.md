@@ -67,7 +67,7 @@ var sampleConfigObj = {compact: true, ignoreAttributes:true}; // sample configOb
 
 exports.default = function() {
     return src('data/*.xml')
-    // pipe the files through our jsontoxml plugin
+    // pipe the files through our xmltojson plugin
     .pipe(xmltojson(sampleConfigObj))
     .pipe(gulp.dest('../testdata/processed'));
     };

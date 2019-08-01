@@ -30,6 +30,19 @@
             ],
             "console": "internalConsole",
             "env": {"DEBUG_LEVEL":"debug"}
-        }
+            },{        
+                "name": "GulpTester Debug RoundTrip",
+                "type": "node",
+                "request": "launch",
+                "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+                "stopOnEntry": false,
+                "args": ["--gulpfile", "./debug/gulpfile.ts", "roundtrip"],
+                "cwd": "${workspaceRoot}",
+                "runtimeArgs": [
+                    "--nolazy", "-r", "ts-node/register"
+                ],
+                "console": "internalConsole",
+                "env": {"DEBUG_LEVEL":"debug"}
+            }
     ]
 }

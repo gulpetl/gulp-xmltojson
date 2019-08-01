@@ -1,5 +1,5 @@
-var map = require('map-stream');
-var rext = require('replace-ext');
+let mapStream = require('map-stream');
+let replaceExt = require('replace-ext');
 import Vinyl = require('vinyl')
 import PluginError = require('plugin-error');
 const pkginfo = require('pkginfo')(module);
@@ -8,10 +8,7 @@ import convert = require('xml-js');
 
 export function xmltojson(configObj?:convert.Options.XML2JSON) {
   configObj = configObj ? configObj : {};
-  if(configObj==undefined)
-  {
-    configObj={}
-  }
+
   function modifyContents(file: Vinyl, cb:Function) {
     if (file.isNull()) return cb(null, file); 
     if (file.isStream()) return cb(new PluginError(PLUGIN_NAME, "Streaming not supported")); // pass error if streaming is not supported
@@ -30,11 +27,11 @@ export function xmltojson(configObj?:convert.Options.XML2JSON) {
     }catch(err){
       returnErr = new PluginError(PLUGIN_NAME, err);
     }
-    file.contents = new Buffer(JSONResult);
-    file.path = rext(file.path, '.json');
+    file.contents = Buffer.from(JSONResult);
+    file.path = replaceExt(file.path, '.json');
 
   }
     cb(returnErr, file);
   }
-  return map(modifyContents);
+  return mapStream(modifyContents);
 };

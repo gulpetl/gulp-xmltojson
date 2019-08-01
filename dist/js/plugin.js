@@ -1,16 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var map = require('map-stream');
-var rext = require('replace-ext');
+let mapStream = require('map-stream');
+let replaceExt = require('replace-ext');
 const PluginError = require("plugin-error");
 const pkginfo = require('pkginfo')(module);
 const PLUGIN_NAME = module.exports.name;
 const convert = require("xml-js");
 function xmltojson(configObj) {
     configObj = configObj ? configObj : {};
-    if (configObj == undefined) {
-        configObj = {};
-    }
     function modifyContents(file, cb) {
         if (file.isNull())
             return cb(null, file);
@@ -29,12 +26,12 @@ function xmltojson(configObj) {
             catch (err) {
                 returnErr = new PluginError(PLUGIN_NAME, err);
             }
-            file.contents = new Buffer(JSONResult);
-            file.path = rext(file.path, '.json');
+            file.contents = Buffer.from(JSONResult);
+            file.path = replaceExt(file.path, '.json');
         }
         cb(returnErr, file);
     }
-    return map(modifyContents);
+    return mapStream(modifyContents);
 }
 exports.xmltojson = xmltojson;
 ;
